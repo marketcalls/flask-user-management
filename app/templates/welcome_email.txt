@@ -1,0 +1,3 @@
+<!-- app/templates/welcome_email.txt -->
+Thank you for registering, {{ username }}!
+We are excited to have you on board.

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Verify OTP{% endblock %}
+{% block content %}
+<div class="max-w-lg mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Verify OTP</h2>
+    <form method="POST" action="{{ url_for('auth.verify_otp') }}">
+        {{ form.hidden_tag() }}
+        <div class="mb-4">
+            {{ form.otp.label(class="block text-gray-700") }}
+            {{ form.otp(class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") }}
+            {% if form.otp.errors %}
+                <span class="text-red-500 text-sm">{{ form.otp.errors[0] }}</span>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            {{ form.submit(class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
